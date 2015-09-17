@@ -1,0 +1,3 @@
+<h1>クラシックシンフォニー楽団のページヘようこそ！</h1>
+{{ include("Common/information.html.twig") }}
+<p><a href="{{ path("app_concert_index") }}">公演情報はこちら</a></p>

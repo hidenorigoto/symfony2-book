@@ -2,8 +2,7 @@
 <body>
 <div>
     <h1>クラシックシンフォニー楽団のページヘようこそ！</h1>
-    <h2>お知らせ</h2>
-    <p>{{ information }}</p>
+    {{ include("Common/information.html.twig") }}
     <p><a href="{{ path("app_concert_index") }}">公演情報はこちら</a></p>
 
     <div>新着ブログ記事</div>

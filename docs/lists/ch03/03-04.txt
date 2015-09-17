@@ -1,0 +1,6 @@
+class ToppageController extends Controller
+{
+    public function indexAction()
+    {
+    }
+}

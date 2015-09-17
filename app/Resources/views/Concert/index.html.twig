@@ -8,6 +8,11 @@
                 {{ loop.index }}
                 {{ concertInfo.date }}
                 {{ concertInfo.place }}
+                {% if concertInfo.available == true %}
+                    (予約可能)
+                {% else %}
+                    (満席)
+                {% endif %}
                 {{ concertInfo.time }}開演
             </li>
         {% endfor %}

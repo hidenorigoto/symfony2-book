@@ -1,0 +1,4 @@
+/**
+ * @Route("/")
+ */
+public function indexAction()

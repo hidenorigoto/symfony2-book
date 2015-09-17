@@ -1,0 +1,7 @@
+/**
+ * @Route("/")
+ */
+public function indexAction()
+{
+    return $this->render('Toppage/index.html.twig');
+}

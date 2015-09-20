@@ -1,0 +1,276 @@
+﻿/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+
+    ========================================================  */
+
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+body {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.pad-top {
+    padding-top: 60px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+i.fa {
+    padding: 5px;
+}
+
+section {
+    padding-top: 50px;
+}
+
+p {
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.pad-row {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pad-bottom {
+    padding-bottom: 50px;
+}
+
+/* NAVBAR STYLE */
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFF;
+}
+
+/* ADDED PADDING IN NAVBAR */
+
+.navbar {
+    padding: 15px;
+    -webkit-transition: background .8s ease-out, padding .8s ease-out;
+    -moz-transition: background .8s ease-out, padding .8s ease-out;
+    transition: background .8s ease-out, padding .8s ease-out;
+}
+
+/* CLASS FOR REMOVING PADDING IN NAVBAR*/
+
+.navbar-pad-original {
+    padding: 0px;
+}
+
+/* CARUOSEL STYLE OR SLIDESHOW STYLE*/
+
+.back-light {
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 10px 100px 10px 100px;
+}
+
+/*NOTE SECION STYLE*/
+.note-sec {
+    padding-bottom: 50px;
+    background: url(../img/9.jpg) no-repeat 50% 50%;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: auto;
+    min-height: 300px;
+    color: #fff;
+}
+
+/*HEADINGS IMAGE STYLE*/
+
+.head-main-img {
+    padding-bottom: 50px;
+    background: url(../img/10.jpg) no-repeat 50% 50%;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: auto;
+    min-height: 300px;
+    color: #fff;
+}
+
+.head-main-img h1 {
+    padding: 50px 2px 2px 10px;
+    text-transform: uppercase;
+}
+
+/* PRICING STYLE */
+
+.plan {
+    padding: 0 0 15px 0;
+    margin: 0px 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.plan li {
+    padding: 15px 0px;
+    font-size: 16px;
+    border-bottom: 1px dotted #e1e1e1;
+}
+
+.price {
+    font-size: 45px !important;
+}
+
+small {
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.plan li i {
+    padding-right: 10px;
+}
+
+.price-two {
+    font-size: 30px !important;
+    padding: 15px 0px;
+    background-color: rgba(162, 188, 253, 1);
+    color: #fff;
+    border: none;
+    font-weight: 900;
+}
+
+.adjust-border-radius {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.adjust-border {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+/*    PORTFOLIO STYLES*/
+
+.portfolio-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio-items {
+    margin-right: -20px;
+}
+
+.portfolio-items > li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio-items.col-3 > li {
+    width: 33%;
+}
+
+.portfolio-item .item-main {
+    margin: 0 10px 10px 0;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #E8EAEE;
+
+}
+
+.portfolio-item img {
+    width: 100%;
+}
+
+.portfolio-item .portfolio-image {
+    position: relative;
+}
+
+.portfolio-item h5 {
+    margin: 0;
+    padding: 30px 0 30px 0;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(177, 166, 255, 1);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+}
+
+.portfolio-item .overlay .preview {
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    margin-top: -20px;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+/*CONTACT STYLES*/
+
+.cnt {
+    width: 100%;
+    min-height: 350px;
+    border: 1px solid #e1e1e1;
+}
+
+.add {
+    font-size: 20px;
+    font-weight: 800;
+    padding: 30px;
+}
+
+#contact-sec {
+    padding-top: 0px;
+}
+
+/* FOOTER STYLE*/
+
+#footer-sec {
+    background-color: #000;
+    color: #808080;
+}
+
+#footer-sec h4 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.inquiry-tel-number {
+    font-size: 28px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

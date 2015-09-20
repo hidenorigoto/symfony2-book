@@ -1,0 +1,15 @@
+/**
+ * BlogArticle
+ *
+ * @ORM\Table(name="blog_article")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\BlogArticleRepository")
+ */
+class BlogArticle
+{
+    ...
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="target_date", type="date")
+     */
+    private $targetDate;

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * BlogArticle
  *
- * @ORM\Table()
+ * @ORM\Table(name="blog_article")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\BlogArticleRepository")
  */
 class BlogArticle
@@ -31,7 +31,7 @@ class BlogArticle
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="targetDate", type="date")
+     * @ORM\Column(name="target_date", type="date")
      */
     private $targetDate;
 

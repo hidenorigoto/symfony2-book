@@ -1,0 +1,30 @@
+public function indexPostAction(Request $request)
+{
+    ...
+        $inquiry = $form->getData();
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($inquiry);
+        $em->flush();
+
+        $message = \Swift_Message::newInstance()
+        ->setSubject('Webサイトからのお問い合わせ')
+        ->setFrom('webmaster@example.com')
+        ->setTo('admin@example.com')
+        ->setBody(
+            $this->renderView(
+                'mail/inquiry.txt.twig',
+                ['data' => $inquiry]
+            )
+        );
+
+        $this->get('mailer')->send($message);
+
+        return $this->redirect(
+            $this->generateUrl('app_inquiry_complete'));
+    }
+
+    return $this->render('Inquiry/index.html.twig',
+        ['form' => $form->createView()]
+    );
+}

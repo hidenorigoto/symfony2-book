@@ -34,14 +34,7 @@ class InquiryController extends Controller
         $form->handleRequest($request);
         if ($form->isValid())
         {
-            $data = $form->getData();
-
-            $inquiry = new Inquiry();
-            $inquiry->setName($data['name']);
-            $inquiry->setEmail($data['email']);
-            $inquiry->setTel($data['tel']);
-            $inquiry->setType($data['type']);
-            $inquiry->setContent($data['content']);
+            $inquiry = $form->getData();
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($inquiry);
@@ -54,7 +47,7 @@ class InquiryController extends Controller
                 ->setBody(
                     $this->renderView(
                         'mail/inquiry.txt.twig',
-                        ['data' => $data]
+                        ['data' => $inquiry]
                     )
                 );
 

@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/inquiry")
@@ -19,6 +20,25 @@ class InquiryController extends Controller
     {
         return $this->render('Inquiry/index.html.twig',
             ['form' => $this->createInquiryForm()->createView()]
+        );
+    }
+
+    /**
+     * @Route("/")
+     * @Method("post")
+     */
+    public function indexPostAction(Request $request)
+    {
+        $form = $this->createInquiryForm();
+        $form->handleRequest($request);
+        if ($form->isValid())
+        {
+            return $this->redirect(
+                $this->generateUrl('app_inquiry_complete'));
+        }
+
+        return $this->render('Inquiry/index.html.twig',
+            ['form' => $form->createView()]
         );
     }
 

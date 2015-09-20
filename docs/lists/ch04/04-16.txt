@@ -1,0 +1,20 @@
+use Symfony\Component\HttpFoundation\Request;
+...
+/**
+ * @Route("/")
+ * @Method("post")
+ */
+public function indexPostAction(Request $request)
+{
+    $form = $this->createInquiryForm();
+    $form->handleRequest($request);
+    if ($form->isValid())
+    {
+        return $this->redirect(
+            $this->generateUrl('app_inquiry_complete'));
+    }
+
+    return $this->render('Inquiry/index.html.twig',
+        ['form' => $form->createView()]
+    );
+}

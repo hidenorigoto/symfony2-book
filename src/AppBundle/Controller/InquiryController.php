@@ -40,4 +40,26 @@ class InquiryController extends Controller
             ['form' => $form->createView()]
         );
     }
+
+    private function createInquiryForm()
+    {
+        return $this->createFormBuilder()
+            ->add('name', 'text')
+            ->add('email', 'text')
+            ->add('tel', 'text', [
+                'required' => false,
+            ])
+            ->add('type', 'choice', [
+                'choices' => [
+                    '公演について',
+                    'その他',
+                ],
+                'expanded' => true,
+            ])
+            ->add('content', 'textarea')
+            ->add('submit', 'submit', [
+                'label' => '送信',
+            ])
+            ->getForm();
+    }
 }

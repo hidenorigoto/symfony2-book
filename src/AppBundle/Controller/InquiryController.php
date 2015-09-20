@@ -79,7 +79,7 @@ class InquiryController extends Controller
 
     private function createInquiryForm()
     {
-        return $this->createFormBuilder()
+        return $this->createFormBuilder(new Inquiry())
             ->add('name', 'text')
             ->add('email', 'text')
             ->add('tel', 'text', [

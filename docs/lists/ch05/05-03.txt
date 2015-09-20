@@ -1,0 +1,5 @@
+private function createInquiryForm()
+{
+    return $this->createFormBuilder(new Inquiry())
+        ->add('name', 'text')
+        ...

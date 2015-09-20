@@ -6,7 +6,7 @@
                 <ul>
                     {% for blog in blogList %}
                         <li>
-                            [{{ blog.targetDate }}]
+                            [{{ blog.targetDate|date('Y年m月d日') }}]
                             {{ blog.title }}
                         </li>
                     {% endfor %}

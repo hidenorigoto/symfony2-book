@@ -1,0 +1,7 @@
+/**
+ * @Route("/complete")
+ */
+public function completeAction()
+{
+    return $this->render('Inquiry/complete.html.twig');
+}

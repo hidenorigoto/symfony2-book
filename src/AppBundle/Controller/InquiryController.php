@@ -22,6 +22,14 @@ class InquiryController extends Controller
         );
     }
 
+    /**
+     * @Route("/complete")
+     */
+    public function completeAction()
+    {
+        return $this->render('Inquiry/complete.html.twig');
+    }
+
     private function createInquiryForm()
     {
         return $this->createFormBuilder()

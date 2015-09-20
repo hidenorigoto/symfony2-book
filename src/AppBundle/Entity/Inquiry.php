@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Inquiry
  *
- * @ORM\Table()
+ * @ORM\Table(name="inquiry")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\InquiryRepository")
  */
 class Inquiry
@@ -38,7 +38,7 @@ class Inquiry
     /**
      * @var string
      *
-     * @ORM\Column(name="tel", type="string", length=20)
+     * @ORM\Column(name="tel", type="string", length=20, nullable=true)
      */
     private $tel;
 

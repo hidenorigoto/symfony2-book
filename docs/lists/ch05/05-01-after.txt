@@ -1,0 +1,17 @@
+/**
+ * Inquiry
+ *
+ * @ORM\Table(name="inquiry")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\InquiryRepository")
+ */
+class Inquiry
+{
+
+
+
+/**
+ * @var string
+ *
+ * @ORM\Column(name="tel", type="string", length=20, nullable=true)
+ */
+private $tel;

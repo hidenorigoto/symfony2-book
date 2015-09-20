@@ -16,7 +16,48 @@
 <section id="inquiry-sec">
     <div class="container">
         <div class="row pad-row">
-            {{ form(form) }}
+            {{ form_start(form) }}
+            <table class="table">
+                <tr>
+                    <th><i class="fa fa-circle"></i> お名前</th>
+                    <td>
+                        {{ form_widget(form.name, {"attr": {"class":"form-control"}}) }}
+                        {{ form_errors(form.name) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="fa fa-circle"></i> メールアドレス</th>
+                    <td>
+                        {{ form_widget(form.email, {"attr": {"class":"form-control"}}) }}
+                        {{ form_errors(form.email) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="fa fa-circle-o"></i> 電話番号</th>
+                    <td>
+                        {{ form_widget(form.tel, {"attr": {"class":"form-control"}}) }}
+                        {{ form_errors(form.tel) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="fa fa-circle"></i> お問い合わせ種別</th>
+                    <td>
+                        {{ form_widget(form.type, {"attr": {"class":"form-control"}}) }}
+                        {{ form_errors(form.type) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="fa fa-circle"></i> お問い合わせ内容</th>
+                    <td>
+                        {{ form_widget(form.content, {"attr": {"class":"form-control"}}) }}
+                        {{ form_errors(form.content) }}
+                    </td>
+                </tr>
+            </table>
+            <div class="text-center">
+                {{ form_widget(form.submit, {"attr": {"class":"btn btn-primary"}}) }}
+            </div>
+            {{ form_end(form) }}
         </div>
     </div>
 </section>

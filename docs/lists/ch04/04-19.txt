@@ -1,0 +1,6 @@
+parameters:
+    ...
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: YOURACCOUNT
+    mailer_password: YOURPASSWORD

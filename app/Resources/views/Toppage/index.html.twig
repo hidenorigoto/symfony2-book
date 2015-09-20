@@ -1,10 +1,56 @@
-<html>
-<body>
-<div>
-    <h1>クラシックシンフォニー楽団のページヘようこそ！</h1>
-    {{ include("Common/information.html.twig") }}
-    <p><a href="{{ path("app_concert_index") }}">公演情報はこちら</a></p>
-    {{ render(controller("AppBundle:Blog:latestList")) }}
-</div>
-</body>
-</html>
+{% extends "layout.html.twig" %}
+
+{% block title %}トップページ{{ parent() }}{% endblock %}
+
+{% block body %}
+<section id="home" class="text-center">
+    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="{{ asset("img/top/1.jpg") }}" alt=""/>
+                <div class="carousel-caption">
+                    <h4 class="back-light">歴史と調和するシンフォニー、音楽で未来へつなぐ</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="just-intro">
+    <div class="container">
+        <div class="row text-center pad-row">
+            <div class="col-md-4 col-sm-4">
+                <i class="fa fa-tasks fa-5x"></i>
+                <h4><strong>公演情報</strong></h4>
+                <p>
+                    クラシックシンフォニー楽団は、定期演奏会を年に1回開催しています。
+                    また、各地のコンサートホールでの公演も随時行っています。
+                </p>
+                <a href="{{ path("app_concert_index") }}" class="btn btn-primary">詳細</a>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <i class="fa fa-group fa-5x"></i>
+                <h4><strong>楽団プロフィール</strong></h4>
+                <p>
+                    クラシックシンフォニー楽団の創立からの歴史や楽団のポリシーなどを紹介します。
+                    楽団メンバーのプロフィールも掲載しています。
+                </p>
+                <a href="{{ path("app_toppage_index") }}" class="btn btn-primary">詳細</a>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <i class="fa fa-comments fa-5x"></i>
+                <h4><strong>ブログ</strong></h4>
+                <p>
+                    クラシックシンフォニー楽団の活動報告や、コンサートの舞台裏、普段の練習風景、
+                    団員の音楽に対する思いを綴っています。
+                </p>
+                <a href="{{ path("app_toppage_index") }}" class="btn btn-primary">詳細</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ include("Common/information.html.twig") }}
+
+{{ render(controller("AppBundle:Blog:latestList")) }}
+{% endblock %}

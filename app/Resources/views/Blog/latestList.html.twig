@@ -1,9 +1,17 @@
-<div>新着ブログ記事</div>
-<ul>
-    {% for blog in blogList %}
-        <li>
-            [{{ blog.targetDate }}]
-            {{ blog.title }}
-        </li>
-    {% endfor %}
-</ul>
+<section id="offer">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">新着ブログ記事</div>
+            <div class="panel-body">
+                <ul>
+                    {% for blog in blogList %}
+                        <li>
+                            [{{ blog.targetDate }}]
+                            {{ blog.title }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

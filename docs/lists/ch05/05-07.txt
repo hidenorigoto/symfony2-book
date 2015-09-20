@@ -1,0 +1,10 @@
+public function latestListAction()
+{
+    $em = $this->getDoctrine()->getManager();
+    $blogArticleRepository = $em->getRepository('AppBundle:BlogArticle');
+    $blogList = $blogArticleRepository->findBy([], ['targetDate' => 'DESC']);
+
+    return $this->render('Blog/latestList.html.twig',
+        ['blogList' => $blogList]
+    );
+}

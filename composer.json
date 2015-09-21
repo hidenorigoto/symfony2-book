@@ -22,7 +22,8 @@
         "league/csv": "^7.1",
         "friendsofsymfony/rest-bundle": "^1.7",
         "jms/serializer-bundle": "^1.0",
-        "nelmio/cors-bundle": "^1.4"
+        "nelmio/cors-bundle": "^1.4",
+        "jms/di-extra-bundle": "^1.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

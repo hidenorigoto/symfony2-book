@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}団員情報{{ parent() }}{% endblock %}
+
+{% block body %}
+<section id="home" class="head-main-img">
+    <div class="container">
+        <div class="row text-center pad-row">
+            <div class="col-md-10 col-md-offset-1">
+                <h1><span class="back-light">団員情報</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="port-sec">
+    <div class="container">
+        <div class="row pad-row" >
+            <div class="col-md-12 col-sm-12" >
+                <ul class="portfolio-items col-3">
+                    {% for member in memberCollection %}
+                        <li class="portfolio-item">
+                            <div class="item-main">
+                                <h5>{{ member.name }}</h5>
+                                <ul class="plan">
+                                    <li>パート：{{ member.part }}</li>
+                                    <li>加入日：{{ member.joinedDate }}</li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

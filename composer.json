@@ -19,7 +19,9 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "league/csv": "^7.1"
+        "league/csv": "^7.1",
+        "friendsofsymfony/rest-bundle": "^1.7",
+        "jms/serializer-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

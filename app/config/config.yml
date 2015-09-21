@@ -87,5 +87,5 @@ fos_rest:
 nelmio_cors:
     paths:
         '^/api/':
-            allow_origin: []
+            allow_origin: ['http://127.0.0.1:8888']
             allow_methods: ['GET']

@@ -1,0 +1,4 @@
+services:
+    app.inquiry_repository:
+        class:          AppBundle\Entity\InquiryRepository
+        ...

@@ -3,12 +3,22 @@ namespace AppBundle\Service\Csv;
 
 use AppBundle\Entity\Inquiry;
 use League\Csv\Writer;
+use JMS\DiExtraBundle\Annotation as DI;
 
+/**
+ * @DI\Service("app.inquiry_csv_builder")
+ */
 class InquiryCsvBuilder
 {
     private $encoding;
     private $inquiryRepository;
 
+    /**
+     * @DI\InjectParams({
+     *      "encoding"=@DI\Inject("%csv_encoding%"),
+     *      "inquiryRepository"=@DI\Inject("app.inquiry_repository")
+     * })
+     */
     public function __construct($encoding, $inquiryRepository) {
         $this->encoding = $encoding;
         $this->inquiryRepository = $inquiryRepository;

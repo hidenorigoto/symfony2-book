@@ -66,6 +66,27 @@ class Inquiry
      */
     private $content;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="process_status", type="string", length=20)
+     * @Assert\NotBlank()
+     */
+    private $processStatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="process_memo", type="text")
+     * @Assert\NotBlank()
+     */
+    private $processMemo;
+
+    public function __construct()
+    {
+        $this->processStatus = 0;
+        $this->processMemo = '';
+    }
 
     /**
      * Get id

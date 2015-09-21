@@ -46,3 +46,5 @@ assetic:
 
 swiftmailer:
     delivery_address: YOURADDRESS@DOMAIN.COM
+
+nelmio_api_doc: ~

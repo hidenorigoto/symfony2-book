@@ -1,0 +1,14 @@
+未処理お問い合わせの一覧 ({{ ""|date("Y-m-d H:i") }}時点)
+
+{% for inquiry in inquiryList %}
+-------------------------------------------------
+■ID: {{ inquiry.id }} {{ inquiry.name }} 様
+-URL: {{ url_base }}{{ path("app_admininquiryedit_input",
+                       {"id":inquiry.id}) }}
+-種別:{% if inquiry.type == 0 %}公演について
+{% else %}その他
+{% endif %}
+-内容:
+{{ inquiry.content }}
+
+{% endfor %}

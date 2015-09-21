@@ -1,0 +1,13 @@
+parameters:
+    csv_encoding: Shift_JIS
+
+services:
+    app.inquiry_csv_builder:
+        class:        AppBundle\Service\Csv\InquiryCsvBuilder
+        arguments:    [%csv_encoding%, @app.inquiry_repository]
+
+    app.inquiry_repository:
+        class:          AppBundle\Entity\InquiryRepository
+        factory:        [@doctrine.orm.entity_manager, getRepository]
+        arguments:
+          - AppBundle\Entity\Inquiry

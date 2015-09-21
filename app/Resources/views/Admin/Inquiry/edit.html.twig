@@ -1,0 +1,63 @@
+{% extends "Admin/layout.html.twig" %}
+
+{% block title %}お問い合わせ管理{% endblock %}
+
+{% block body %}
+<h2 class="sub-header">お問い合わせ管理 - {{ inquiry.id }}</h2>
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <td>{{ inquiry.id }}</td>
+    </tr>
+    <tr>
+        <th>お名前</th>
+        <td>{{ inquiry.name }}</td>
+    </tr>
+    <tr>
+        <th>メールアドレス</th>
+        <td>{{ inquiry.email }}</td>
+    </tr>
+    <tr>
+        <th>電話番号</th>
+        <td>{{ inquiry.tel }}</td>
+    </tr>
+    <tr>
+        <th>種別</th>
+        <td>{% if inquiry.type == 0 %}公演について{% else %}その他{% endif %}</td>
+    </tr>
+    <tr>
+        <th>内容</th>
+        <td>{{ inquiry.content }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ステータス</th>
+        <td>
+            {{ form_widget(form.processStatus, {"attr": {"class":"form-control"}}) }}
+            {{ form_errors(form.processStatus) }}
+        </td>
+    </tr>
+    <tr>
+        <th>対応メモ</th>
+        <td>
+            {{ form_widget(form.processMemo, {"attr": {"class":"form-control"}}) }}
+            {{ form_errors(form.processMemo) }}
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="text-center">
+    {{ form_widget(form.submit, {"attr": {"class":"btn btn-primary"}}) }}
+</div>
+{{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+use AppBundle\DataFixtures\ORM\BlogArticleLoader;
+...
+    public function ブログ記事一覧が表示されること()
+    {
+        $this->loadFixtures([
+            BlogArticleLoader::class
+        ]);
+
+        $client = static::createClient();
+        ...
+    }
+...

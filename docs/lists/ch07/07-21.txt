@@ -1,0 +1,8 @@
+...
+class ConcertController extends FOSRestController
+{
+    public function getConcertsAction()
+    {
+        ...
+    }
+}

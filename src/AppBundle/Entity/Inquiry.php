@@ -70,7 +70,7 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="process_status", type="string", length=20)
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"admin"})
      */
     private $processStatus;
 
@@ -78,7 +78,7 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="process_memo", type="text")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"admin"})
      */
     private $processMemo;
 

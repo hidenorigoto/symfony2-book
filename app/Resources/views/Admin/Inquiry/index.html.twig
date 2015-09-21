@@ -1,0 +1,31 @@
+{% extends "Admin/layout.html.twig" %}
+
+{% block title %}お問い合わせ管理{% endblock %}
+
+{% block body %}
+<h2 class="sub-header">お問い合わせ管理</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>日時</th>
+        <th>名前</th>
+        <th>種別</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for inquiry in inquiryList %}
+        <tr>
+            <td>{{ inquiry.id }}</td>
+            <td></td>
+            <td>{{ inquiry.name }}</td>
+            <td>{% if inquiry.type == 0 %}公演について{% else %}その他{% endif %}</td>
+            <td>
+                詳細
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

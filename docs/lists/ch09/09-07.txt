@@ -1,6 +1,3 @@
-<?php
-namespace AppBundle\Service\Csv;
-
 use AppBundle\Entity\Inquiry;
 use AppBundle\Entity\InquiryRepository;
 use Doctrine\Common\Collections\ArrayCollection;

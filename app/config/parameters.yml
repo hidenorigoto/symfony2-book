@@ -10,3 +10,4 @@ parameters:
     mailer_user: YOURACCOUNT
     mailer_password: YOURPASSWORD
     secret: 346d635ccdebbd213cf9e074baa5a7cce799e093
+    url_base:          http://127.0.0.1:8000

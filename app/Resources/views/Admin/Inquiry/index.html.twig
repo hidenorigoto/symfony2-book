@@ -6,11 +6,13 @@
 <h2 class="sub-header">お問い合わせ管理</h2>
 
 <div>
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_start(form, {'attr': {'id':'searchForm', 'novalidate': 'novalidate'}}) }}
     検索：{{ form_widget(form.search) }}
 
-    {{ form_widget(form.submit, {"attr": {"class":"btn btn-default"}}) }}
+    {{ form_widget(form.submit, {"attr": {"class":"btn btn-default searchButton"}}) }}
     {{ form_end(form) }}
+
+    <a class="btn btn-default downloadButton">CSVダウンロード</a>
 </div>
 
 <table class="table table-striped">
@@ -37,4 +39,18 @@
     {% endfor %}
     </tbody>
 </table>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+$('.downloadButton').click(function() {
+    $('#searchForm').attr('action', '{{ path("app_admininquirylist_index", {"_format":"csv"}) }}');
+    $('#searchForm').submit();
+});
+$('.searchButton').click(function() {
+    $('#searchForm').attr('action', '{{ path("app_admininquirylist_index", {"_format":"html"}) }}');
+    $('#searchForm').submit();
+});
+</script>
 {% endblock %}

@@ -14,4 +14,23 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class AdminInquiryEditController extends Controller
 {
+    private function createInquiryForm($inquiry)
+    {
+        return $this->createFormBuilder($inquiry,
+            ["validation_groups" => ["admin"]])
+            ->add('processStatus', 'choice', [
+                'choices' => [
+                    '未対応',
+                    '対応中',
+                    '対応済',
+                ],
+                'empty_data' => 0,
+                'expanded' => true,
+            ])
+            ->add('processMemo', 'textarea')
+            ->add('submit', 'submit', [
+                'label' => '保存',
+            ])
+            ->getForm();
+    }
 }

@@ -5,6 +5,10 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use AppBundle\Entity\Inquiry;
+use League\Csv\Writer;
 
 /**
  * @Route("/admin/inquiry")
@@ -12,9 +16,14 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminInquiryListController extends Controller
 {
     /**
-     * @Route("/search")
+     * @Route("/search.{_format}",
+     *      defaults={"_format": "html"},
+     *      requirements={
+     *         "_format": "html|csv",
+     *     }
+     * )
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $_format)
     {
         $form = $this->createSearchForm();
         $form->handleRequest($request);
@@ -28,6 +37,17 @@ class AdminInquiryListController extends Controller
 
         $inquiryList = $inquiryRepository->findAllByKeyword($keyword);
 
+        if ($_format == 'csv') {
+            $response = new Response($this->createCsv($inquiryList));
+            $d = $response->headers->makeDisposition(
+                ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+                'inquiry_list.csv'
+            );
+            $response->headers->set('Content-Disposition', $d);
+
+            return $response;
+        }
+
         return $this->render('Admin/Inquiry/index.html.twig',
             [
                 'form' => $form->createView(),
@@ -40,9 +60,27 @@ class AdminInquiryListController extends Controller
     {
         return $this->createFormBuilder()
             ->add('search', 'search')
-            ->add('submit', 'submit', [
+            ->add('submit', 'button', [
                 'label' => '検索',
             ])
             ->getForm();
+    }
+
+    private function createCsv($inquiryList)
+    {
+        /** @var Writer $writer */
+        $writer = Writer::createFromString('','');
+        $writer->setNewline("\r\n");
+
+        foreach ($inquiryList as $inquiry) {
+            /** @var Inquiry $inquiry */
+            $writer->insertOne([
+                $inquiry->getId(),
+                $inquiry->getName(),
+                $inquiry->getEmail()
+            ]);
+        }
+
+        return (string)$writer;
     }
 }

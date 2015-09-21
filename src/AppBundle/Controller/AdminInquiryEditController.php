@@ -14,6 +14,23 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class AdminInquiryEditController extends Controller
 {
+    /**
+     * @Route("/{id}/edit")
+     * @ParamConverter("inquiry", class="AppBundle:Inquiry")
+     * @Method("get")
+     */
+    public function inputAction(Inquiry $inquiry)
+    {
+        $form = $this->createInquiryForm($inquiry);
+
+        return $this->render('Admin/Inquiry/edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'inquiry' => $inquiry
+            ]
+        );
+    }
+
     private function createInquiryForm($inquiry)
     {
         return $this->createFormBuilder($inquiry,

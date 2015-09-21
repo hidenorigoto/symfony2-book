@@ -22,7 +22,7 @@
             <td>{{ inquiry.name }}</td>
             <td>{% if inquiry.type == 0 %}公演について{% else %}その他{% endif %}</td>
             <td>
-                詳細
+                <a class="btn btn-default" href="{{ path("app_admininquiryedit_input", {"id": inquiry.id}) }}">詳細</a>
             </td>
         </tr>
     {% endfor %}

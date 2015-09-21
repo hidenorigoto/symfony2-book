@@ -3,12 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JSON;
 
 /**
  * Concert
  *
  * @ORM\Table(name="concert")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\ConcertRepository")
+ * @JSON\ExclusionPolicy("all")
  */
 class Concert
 {
@@ -25,6 +27,8 @@ class Concert
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
+     * @JSON\Expose()
+     * @JSON\Type("DateTime<'Y-m-d'>")
      */
     private $date;
 
@@ -32,6 +36,8 @@ class Concert
      * @var \DateTime
      *
      * @ORM\Column(name="time", type="time")
+     * @JSON\Expose()
+     * @JSON\Type("DateTime<'H:i'>")
      */
     private $time;
 
@@ -39,6 +45,8 @@ class Concert
      * @var string
      *
      * @ORM\Column(name="place", type="string", length=100)
+     * @JSON\Expose()
+     * @JSON\Type("string")
      */
     private $place;
 
@@ -46,6 +54,8 @@ class Concert
      * @var boolean
      *
      * @ORM\Column(name="available", type="boolean")
+     * @JSON\Expose()
+     * @JSON\Type("boolean")
      */
     private $available;
 

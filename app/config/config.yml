@@ -83,3 +83,9 @@ swiftmailer:
 fos_rest:
     view:
         view_response_listener: force
+
+nelmio_cors:
+    paths:
+        '^/api/':
+            allow_origin: []
+            allow_methods: ['GET']

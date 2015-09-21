@@ -1,0 +1,53 @@
+...
+use JMS\Serializer\Annotation as JSON;
+
+/**
+ * ...
+ * @JSON\ExclusionPolicy("all")
+ */
+class Concert
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     * @JSON\Expose()
+     * @JSON\Type("DateTime<'Y-m-d'>")
+     */
+    private $date;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="time", type="time")
+     * @JSON\Expose()
+     * @JSON\Type("DateTime<'H:i'>")
+     */
+    private $time;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="place", type="string", length=100)
+     * @JSON\Expose()
+     * @JSON\Type("string")
+     */
+    private $place;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="available", type="boolean")
+     * @JSON\Expose()
+     * @JSON\Type("boolean")
+     */
+    private $available;

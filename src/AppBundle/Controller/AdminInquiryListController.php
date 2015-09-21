@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/admin/inquiry")
@@ -11,16 +12,37 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class AdminInquiryListController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/search")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $form = $this->createSearchForm();
+        $form->handleRequest($request);
+        $keyword = null;
+        if ($form->isValid()) {
+            $keyword = $form->get('search')->getData();
+        }
+
         $em = $this->getDoctrine()->getManager();
         $inquiryRepository = $em->getRepository('AppBundle:Inquiry');
-        $inquiryList = $inquiryRepository->findAll([], ['id' => 'DESC']);
+
+        $inquiryList = $inquiryRepository->findAllByKeyword($keyword);
 
         return $this->render('Admin/Inquiry/index.html.twig',
-            ['inquiryList' => $inquiryList]
+            [
+                'form' => $form->createView(),
+                'inquiryList' => $inquiryList
+            ]
         );
+    }
+
+    private function createSearchForm()
+    {
+        return $this->createFormBuilder()
+            ->add('search', 'search')
+            ->add('submit', 'submit', [
+                'label' => '検索',
+            ])
+            ->getForm();
     }
 }

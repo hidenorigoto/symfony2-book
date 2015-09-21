@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}ブログ{{ parent() }}{% endblock %}
+
+{% block body %}
+<section id="home" class="head-main-img">
+    <div class="container">
+        <div class="row text-center pad-row">
+            <div class="col-md-10 col-md-offset-1">
+                <h1><span class="back-light">ブログ</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="port-sec">
+    <div class="container">
+        <div class="row pad-row" >
+            <div class="col-md-12 col-sm-12" >
+                <ul class="portfolio-items col-3">
+                    {% for blogArticle in blogList %}
+                        <li class="portfolio-item blog-article">
+                            <div class="item-main">
+                                <h5>{{ blogArticle.title }}</h5>
+                                <ul class="plan">
+                                    <li>{{ blogArticle.targetDate|date("Y/m/d") }}</li>
+                                    <li>{{ blogArticle.content }}</li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

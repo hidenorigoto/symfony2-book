@@ -4,6 +4,15 @@
 
 {% block body %}
 <h2 class="sub-header">お問い合わせ管理</h2>
+
+<div>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    検索：{{ form_widget(form.search) }}
+
+    {{ form_widget(form.submit, {"attr": {"class":"btn btn-default"}}) }}
+    {{ form_end(form) }}
+</div>
+
 <table class="table table-striped">
     <thead>
     <tr>

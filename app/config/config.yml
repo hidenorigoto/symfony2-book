@@ -89,3 +89,8 @@ nelmio_cors:
         '^/api/':
             allow_origin: ['http://127.0.0.1:8888']
             allow_methods: ['GET']
+
+jms_di_extra:
+    locations:
+        all_bundles: true
+        directories: ["%kernel.root_dir%/../src"]

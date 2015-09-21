@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints As Assert;
 
 /**
  * Inquiry
@@ -25,6 +26,8 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=30)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=30)
      */
     private $name;
 
@@ -32,6 +35,9 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=100)
+     * @Assert\Email()
      */
     private $email;
 
@@ -39,6 +45,8 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="tel", type="string", length=20, nullable=true)
+     * @Assert\Length(max=20)
+     * @Assert\Regex(pattern="/^[0-9-]+$/")
      */
     private $tel;
 
@@ -46,6 +54,7 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=20)
+     * @Assert\NotBlank()
      */
     private $type;
 
@@ -53,6 +62,7 @@ class Inquiry
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank()
      */
     private $content;
 

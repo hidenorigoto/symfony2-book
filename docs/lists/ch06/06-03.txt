@@ -1,0 +1,57 @@
+...
+use Doctrine\ORM\Mapping as ORM;
+...
+/**
+ * Inquiry
+ *
+ * @ORM\Table(name="inquiry")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\InquiryRepository")
+ */
+class Inquiry
+{
+    ...
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=30)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=30)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=100)
+     * @Assert\Email()
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=20, nullable=true)
+     * @Assert\Length(max=20)
+     * @Assert\Regex(pattern="/^[0-9-]+$/")
+     */
+    private $tel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=20)
+     * @Assert\NotBlank()
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank()
+     */
+    private $content;
+    ...
+}

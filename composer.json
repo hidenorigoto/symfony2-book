@@ -29,7 +29,9 @@
         "sensio/generator-bundle": "~2.3",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
         "nelmio/api-doc-bundle": "^2.9",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "^4.8",
+        "hautelook/alice-bundle": "^0.2.0",
+        "liip/functional-test-bundle": "^1.2"
     },
     "scripts": {
         "post-root-package-install": [

@@ -1,0 +1,5 @@
+AppBundle\Entity\BlogArticle:
+    blog{1..20}:
+        title: <lastName()> <firstName()>の記事
+        targetDate: <dateTime()>
+        content: 今日は<numberBetween(1, 100)>人の来場者がありました。....

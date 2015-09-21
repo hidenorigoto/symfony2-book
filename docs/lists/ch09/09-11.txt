@@ -1,0 +1,3 @@
+hautelook_alice:
+    locale: ja_JP
+    seed: 1

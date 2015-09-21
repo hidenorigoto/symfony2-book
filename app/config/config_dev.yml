@@ -48,3 +48,7 @@ swiftmailer:
     delivery_address: YOURADDRESS@DOMAIN.COM
 
 nelmio_api_doc: ~
+
+hautelook_alice:
+    locale: ja_JP
+    seed: 1

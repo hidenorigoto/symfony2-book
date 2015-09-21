@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="test">テスト</button><br />
+<textarea id="result" style="width: 500px; height:500px;"></textarea>
+<script src="/jquery/jquery-2.1.1.min.js"></script>
+<script type="application/ecmascript">
+$(function() {
+    $('#test').click(function() {
+        $.get('http://127.0.0.1:8000/api/concerts.json', function(data) {
+            $('#result').text(JSON.stringify(data));
+        });
+    })
+});
+</script>
+</body>
+</html>

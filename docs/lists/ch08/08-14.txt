@@ -1,0 +1,17 @@
+/**
+ * Gets the 'app.member_collection' service.
+ *
+ * This service is shared.
+ * This method always returns the same instance of the service.
+ *
+ * @return \AppBundle\Entity\MemberCollection A AppBundle\Entity\MemberCollection instance.
+ */
+protected function getApp_MemberCollectionService()
+{
+    $this->services['app.member_collection'] = $instance = new \AppBundle\Entity\MemberCollection();
+
+    $instance->addMember('山田', 'トランペット', '2010-10-01');
+    $instance->addMember('田中', 'バイオリン', '2008-04-10');
+
+    return $instance;
+}

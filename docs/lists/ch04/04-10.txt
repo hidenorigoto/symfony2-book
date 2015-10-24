@@ -1,0 +1,14 @@
+<form name="form" method="post" action="">
+  <div id="form">
+    <div>
+      <label for="form_name" class="required">Name</label>
+      <input type="text" id="form_name" name="form[name]" required="required" />
+    </div>
+    <div>
+      <label for="form_email" class="required">Email</label>
+      <input type="text" id="form_email" name="form[email]" required="required" />
+    </div>
+    <div>
+      <label for="form_tel" class="required">Tel</label>
+      <input type="text" id="form_tel" name="form[tel]" />
+      ...

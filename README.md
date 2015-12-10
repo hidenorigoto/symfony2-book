@@ -13,7 +13,7 @@
 
 # サンプルコードのダウンロード
 
-- サンプルコード ([ダウンロード](../../blob/master/download/symfony2-book-download-20151125.zip) 18.4MB)
+- サンプルコード ([ダウンロード](../../raw/master/download/symfony2-book-download-20151125.zip) 18.4MB)
     - サンプルコードの中に、書籍内のすべてのリストと、途中で利用するCSSやテンプレートなどのアセットファイルが含まれています
     - リストは[こちら](../../tree/master/docs/lists)からも閲覧できます
 - サンプルアプリケーション完成コード ([ダウンロード](https://github.com/hidenorigoto/symfony2-book/archive/master.zip))

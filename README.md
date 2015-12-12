@@ -27,11 +27,16 @@
 
 ## 第3章
 
-- p.56 プロジェクトのひな型生成時のコマンドで、`classic-symfony` の後にスペースを入れてください
+- p.56 プロジェクトのひな型生成時のコマンドで、`classic-symfony` の後にスペースを入れてください。
 
  (誤) | $ symfony new classic-symfony2.7
  -----|-----------------------------------
  (正) | $ symfony new classic-symfony 2.7
+
+ (誤) | C:¥projects>php symfony.phar new classic-symfony2.7
+ -----|-----------------------------------
+ (正) | C:¥projects>php symfony.phar new classic-symfony 2.7
+
 
 # リストごとのコミット
 

@@ -71,6 +71,16 @@
  -----|----------------------------
  (正) | 末尾に ~ が付いたファイル名
 
+## 第9章
+
+- p.264 本書の解説ではhautelook/alice-bundleは、バージョン0.2を利用します。Composerでインストールする際、明示的にバージョン番号を付加してください。
+
+3段落目の下コマンド例内
+
+ (誤) | $ php composer.phar require hautelook/alice-bundle --dev
+ -----|----------------------------
+ (正) | $ php composer.phar require hautelook/alice-bundle:0.2 --dev
+
 
 # リストごとのコミット
 

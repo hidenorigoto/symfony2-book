@@ -42,6 +42,14 @@
  -----|-----------------------------------
  (正) | ブラウザから`http://127.0.0.1:8000/ja/blog/`にアクセスし、
 
+- p.50 getTemplatingService()内で使われているクラスは `TimedTwigEngine` ではなく `TwigEngine` になります。TimedTwigEngineはSymfony 2.6以前で利用可能で、古いバージョンのサービスコンテナではこのクラスが使われていました。Symfony 2.7で非推奨となり、Symfony 3.0で削除されます [参照](https://github.com/symfony/twig-bundle/blob/2.7/Debug/TimedTwigEngine.php#L26)。
+
+1段落目5〜6行目
+
+ (誤) | このメソッドを見ると、`TimedTwigEngine`というクラスが
+ -----|-----------------------------------
+ (正) | このメソッドを見ると、`TwigEngine`というクラスが
+
 
 ## 第3章
 

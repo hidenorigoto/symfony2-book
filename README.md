@@ -81,6 +81,7 @@
  -----|----------------------------
  (正) | $inquiryList = $inquiryRepository->findBy([], ['id' => 'DESC']);
 
+- p.156 図6-4でお問い合わせ一覧がIDの降順で表示されていないのは誤りです。([差替画像](https://cloud.githubusercontent.com/assets/89830/12013917/5c7be3d2-ad64-11e5-81b7-6c09c6a9a637.png))
 
 - p.157脚注 `doctrine:generate:entities` コマンドで作成されるバックアップファイルでは、ファイル名の先頭ではなく末尾に `~` がつきます。
 

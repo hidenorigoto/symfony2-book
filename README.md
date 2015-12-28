@@ -75,6 +75,13 @@
 
 ## 第6章
 
+- p.155 リスト6-5のindexAction()内、findAll()はfindBy()の誤りです。
+
+ (誤) | $inquiryList = $inquiryRepository->findAll([], ['id' => 'DESC']);
+ -----|----------------------------
+ (正) | $inquiryList = $inquiryRepository->findBy([], ['id' => 'DESC']);
+
+
 - p.157脚注 `doctrine:generate:entities` コマンドで作成されるバックアップファイルでは、ファイル名の先頭ではなく末尾に `~` がつきます。
 
  (誤) | 先頭に ~ が付いたファイル名

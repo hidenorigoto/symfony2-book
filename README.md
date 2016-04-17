@@ -122,6 +122,15 @@
  (正) | $ php composer.phar require hautelook/alice-bundle:0.2 --dev
 
 
+## Appendix 1
+
+- p.285 moneyタイプの説明に誤植がありました。
+
+ (誤) | 通過用のフォーマット機能あり
+ -----|----------------------------
+ (正) | 通貨用のフォーマット機能あり
+
+
 # リストごとのコミット
 
 - [【3-0】 Symfony Installerにてインストール](../../commit/973d40a200443ed5af6def04fa5b98b1ae8203a3)
